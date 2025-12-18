@@ -1,0 +1,27 @@
+{% extends "faceapp/base.html" %}
+
+{% block content %}
+<div class="card p-4 shadow">
+    <h2>Attendance Records</h2>
+
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>Employee</th>
+                <th>Status</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for a in attendance %}
+            <tr>
+                <td>{{ a.employee.name }}</td>
+                <td>{{ a.status }}</td>
+                <td>{{ a.timestamp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

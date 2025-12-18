@@ -1,0 +1,29 @@
+{% extends "faceapp/base.html" %}
+
+{% block content %}
+<div class="card p-4 shadow">
+    <h2>Departments</h2>
+
+    <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Total Employees</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for dept in departments %}
+            <tr>
+                <td>{{ dept.department_id }}</td>
+                <td>{{ dept.department_name }}</td>
+                <td>{{ dept.location }}</td>
+                <td>{{ dept.total_employees }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
